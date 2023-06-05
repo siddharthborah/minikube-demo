@@ -1,0 +1,568 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: slab-config
+data:
+  test.json: |
+    {
+      "/slabconfig/base/accessagentd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/appsproxyd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/appsproxyd/appsproxyd": {
+        "S3litedAccessKey": "",
+        "S3litedSecretKey": "",
+        "S3litedHost": "",
+        "LogsEndpoint": "127.0.0.1",
+        "MetricsEndpoint": "127.0.0.1",
+        "GlobalSystemBucket": "",
+        "UseSSL": false,
+        "SiteType": "bosra-mantle",
+        "SystemManagerEP": "system-manager",
+        "MaxThreads": 10
+      },
+      "/slabconfig/base/assetcached/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/assetcached/assetcached": {
+        "AssetsToCache": null,
+        "ImagesToCache": null,
+        "CacheTTLSeconds": 604800,
+        "MaxCacheSizeBytes": null,
+        "ClearCache": false,
+        "ConcurrentFetches": 10
+      },
+      "/slabconfig/base/bucketd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/bucketd/bucketd": {
+        "MetricsRate": 60000000000,
+        "StatsCheckpointSecs": 30,
+        "StatsRebuildVersion": 0,
+        "MaxBuckets": 20000,
+        "MaxKeys": 1000
+      },
+      "/slabconfig/base/chassismond/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/chassismond/chassismond": {
+        "ChassisDefs": null
+      },
+      "/slabconfig/base/coordinatord/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/coordinatord/coordinatord": {
+        "CancelGracePeriod": 600,
+        "WorkPollInterval": 20,
+        "SyncPollInterval": 10,
+        "AcceptWork": false
+      },
+      "/slabconfig/base/diskd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/diskd/diskd": {
+        "RPCLimit": 0,
+        "ReservedZones": 0,
+        "RestrictedPath": "",
+        "LimitConnType": 0,
+        "NoPrealloc": false,
+        "FaultInject": 0,
+        "SchedulerDef": {
+          "SchedulerType": "yfq",
+          "Priorities": [
+            8,
+            2
+          ],
+          "Args": [
+            "12",
+            "6",
+            "16"
+          ]
+        },
+        "Verify": 0,
+        "Recover": false,
+        "GCPercent": 0
+      },
+      "/slabconfig/base/diskprobed/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/had/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/healthd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/hostmond/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/hostmond/hostmond/ping": {
+        "num_packets": 10,
+        "strobe_time": "100ms",
+        "timeout": "3s",
+        "mac_addrs": null
+      },
+      "/slabconfig/base/hostmond/profile": {
+        "Service": "",
+        "Type": "",
+        "Data": "",
+        "Debug": 0,
+        "Version": 0
+      },
+      "/slabconfig/base/igkubeletd/Logging": {
+        "Level": 7,
+        "LevelOverride": {
+          "igneous.io/vendor/github.com/google/cadvisor/manager/manager.go": 6,
+          "igneous.io/vendor/k8s.io/kubernetes/pkg/kubelet/eviction": 6,
+          "igneous.io/vendor/k8s.io/kubernetes/pkg/kubelet/server/stats/summary.go": 6
+        }
+      },
+      "/slabconfig/base/igkubeletd/igkubeletd": {
+        "Pods": null,
+        "BosraPods": null,
+        "PetraPods": null
+      },
+      "/slabconfig/base/indexd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/indexd/indexd": {
+        "CheckpointThreshold": 4194304,
+        "CheckpointPeriod": 60,
+        "CheckpointWindowSize": 10000,
+        "MaxInMemorySize": 33554432,
+        "MaxBlobTables": 20,
+        "MaxGCQueueLength": 20,
+        "ConcurrentCompactions": 3,
+        "LeveledCompactionFactor": 10,
+        "LeveledCompactionMin": 4,
+        "LeveledCompactionMax": 10,
+        "DebugTraceFrequency": 0,
+        "MetricsRate": 60000000000,
+        "ListDuringRebuild": false,
+        "DeleteIndex": "",
+        "RebuildPartitions": 16,
+        "HierarchicalIndex": true,
+        "HierarchicalIndexQuery": true,
+        "HierarchicalIndexTruncate": 60000000000,
+        "SearchIndex": true,
+        "SearchIndexGroupSize": 4000000,
+        "SearchIndexWriteThreshold": 8192,
+        "SearchIndexFlushThreshold": 1073741824,
+        "SearchIndexWorkers": 2,
+        "SearchIndexExcludeBuckets": [
+          "",
+          "monitord-d2b74be98cbfb70c9c5cad2cedf19bfc",
+          "nfs-export-config-v0-bbaa07b52ee655357adc2b3bd8444ceb87002c5",
+          "archive-config-v0-bbaa07b52ee655357adc2b3bd8444ceb87002c5",
+          "cs-system-bucket-v0-bbaa07b52ee655357adc2b3bd8444ceb87002c5"
+        ],
+        "TableCacheSize": 1073741824,
+        "RSDCacheSize": 1073741824,
+        "RSDCacheFillLimit": 200,
+        "FullCompactionRequest": ""
+      },
+      "/slabconfig/base/ingestd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/ingestd/ingestd": {
+        "MetricsRate": 60000000000,
+        "ThrottleMax": 10000,
+        "LargeObjectThreshold": 65536,
+        "SnapshotTimeOfDay": "19:00:00",
+        "SnapshotIntervalDays": 0,
+        "RestoreSnapshotIDs": [
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000",
+          "00000000000000000000000000000000"
+        ],
+        "StreamPut": true,
+        "OStorePutTags": true,
+        "MaxJournalMergeEntries": 200,
+        "MaxJournalMergeBytes": 262144,
+        "FlushBatchSize": 50,
+        "MinPartSize": 0,
+        "GroupedPutConcurrency": 50,
+        "SubBlobDelete": true,
+        "ConcurrentCheckpoints": 16,
+        "ConcurrentCompactions": 16,
+        "ConcurrentGCs": 16,
+        "ConcurrentTasks": 4,
+        "OStoreCfg": {
+          "CheckpointThreshold": 4194304,
+          "CheckpointPeriod": 0,
+          "CheckpointMax": 8388608,
+          "MaxBlobTables": 20,
+          "MaxGCQueueLength": 20,
+          "ConcurrentCompactions": 2,
+          "LeveledCompactionFactor": 10,
+          "LeveledCompactionMin": 4,
+          "LeveledCompactionMax": 10,
+          "OverlaySizeThreshold": 1048576,
+          "OverlaySizeMax": 2097152,
+          "OverlayObjectsThreshold": 1000,
+          "OverlayObjectsMax": 2000,
+          "BlobCacheSize": 2147483648,
+          "BlobCacheFillLimit": 410,
+          "BlockCacheSize": 4294967296,
+          "EnableDataDelete": true,
+          "GCIntervalSeconds": 3600,
+          "GCDelayMinutes": 720,
+          "SnapshotRetentionCount": 5,
+          "SnapshotMetricsRate": 600000000000,
+          "RebuildID": 0,
+          "RebuildWorkers": 20,
+          "RefCache": true
+        },
+        "DeleteStoreCfg": {
+          "CheckpointThreshold": 524288,
+          "CheckpointPeriod": 300,
+          "CheckpointMax": 8388608,
+          "MaxBlobTables": 20,
+          "ConcurrentCompactions": 2,
+          "LeveledCompactionFactor": 10,
+          "LeveledCompactionMin": 4,
+          "LeveledCompactionMax": 10,
+          "TableCacheSize": 8388608,
+          "RSDCacheSize": 8388608,
+          "GCIntervalSeconds": 46800,
+          "GCDeleteWorkers": 10,
+          "CompactionPercentDel": 80,
+          "CompactionDelaySec": 360,
+          "DropRemotesDeleteStore": false,
+          "DropConsolidateSection": false
+        },
+        "RemotesDeleteStoreCfg": {
+          "CheckpointThreshold": 524288,
+          "CheckpointPeriod": 300,
+          "CheckpointMax": 8388608,
+          "MaxBlobTables": 20,
+          "ConcurrentCompactions": 2,
+          "LeveledCompactionFactor": 10,
+          "LeveledCompactionMin": 4,
+          "LeveledCompactionMax": 10,
+          "TableCacheSize": 8388608,
+          "RSDCacheSize": 8388608,
+          "GCIntervalSeconds": 0,
+          "GCDeleteWorkers": 0,
+          "CompactionPercentDel": 0,
+          "CompactionDelaySec": 0,
+          "DropRemotesDeleteStore": false,
+          "DropConsolidateSection": false
+        },
+        "LinkReferenceStoreCfg": {
+          "Check": false,
+          "CheckpointThreshold": 524288,
+          "CheckpointPeriod": 300,
+          "CheckpointMax": 8388608,
+          "MaxBlobTables": 20,
+          "TableCacheSize": 8388608,
+          "BlobCacheSize": 8388608
+        },
+        "StreamCfg": {
+          "CheckpointThreshold": 4194304,
+          "CheckpointPeriod": 300,
+          "CheckpointMax": 8388608,
+          "MaxFragmentCount": 100,
+          "MaxGCQueueLength": 20,
+          "MaxFragmentSize": 10737418240,
+          "LazyInit": false,
+          "ConcurrentCompactions": 2,
+          "StreamCacheSize": 4194304,
+          "DropStream": false
+        },
+        "CompactionMaxGroupSize": 104857600,
+        "CompactionMaxGroupObjects": 1000,
+        "CompactionCompression": true,
+        "CompactionRunFlag": true,
+        "CompactionMissingBlobLevel": 1,
+        "CompactionDeletestoreCleanup": false,
+        "NFSBlobStoreMountPath": "",
+        "AzsStorageAccountMap": null,
+        "NoPrefixBlobStore": null,
+        "RemoteDeleteDelaySeconds": 86400,
+        "KVJournalFlushTimeout": 0,
+        "KVJournalFlushSoftTimeout": 0,
+        "KVJournalSyncTimeout": 0,
+        "KVJournalSyncSoftTimeout": 0
+      },
+      "/slabconfig/base/keystored/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/keystored/keystored": {
+        "ForceSnapSync": false,
+        "ForceSyncDelay": false,
+        "DebugDiff": false,
+        "SnapNumLogs": 10000,
+        "SnapLogSize": 2097152
+      },
+      "/slabconfig/base/keystoreproxyd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/ksgroupd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/load_generator/Loadgen": {
+        "NumPuts": 0,
+        "MaxPutSizeBytes": 0,
+        "NumPutThreads": 1,
+        "DoGets": true,
+        "TPBytes": 0,
+        "PathPrefix": "",
+        "Bucket": "loadgen-bucket",
+        "FixedSizedPuts": false
+      },
+      "/slabconfig/base/load_generator/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/log_aggregator/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/log_forwarder/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/masterd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/masterd/os/rlimits": {},
+      "/slabconfig/base/memberd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/memberd/memberd": {},
+      "/slabconfig/base/monitord/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/monitord/monitord": {
+        "RateSecs": 60,
+        "Bucket": "",
+        "KeyID": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "KeySecret": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+      },
+      "/slabconfig/base/notifyd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/notifyd/notifyd": {
+        "MetricsRate": 60000000000,
+        "MaxSubscriptions": 100,
+        "CheckpointPeriod": 30,
+        "ErrorRetryInterval": 1000000000,
+        "RestAPIPort": 5702,
+        "BatchSize": 1000,
+        "DropSubscriptions": null
+      },
+      "/slabconfig/base/nyxd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/nyxd/nyxd": {
+        "MetricsRate": 60000000000,
+        "BlobCacheSize": 2147483648,
+        "BlobCacheFillLimit": 256,
+        "BlobCacheShards": 4,
+        "TableCacheSize": 536870912,
+        "TableCacheShards": 4,
+        "TreeCacheSize": 536870912,
+        "TreeCacheShards": 4,
+        "BlobPrefetch": 0,
+        "OpenLimit": 64,
+        "QueryLimit": 256,
+        "QueryCacheSize": 10000,
+        "FileIndex": {
+          "MaxChunkSize": 2147483647,
+          "RangeCacheSize": 6,
+          "RangeLoadThrottle": 64
+        }
+      },
+      "/slabconfig/base/plume_proxy/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/poked/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/reporterd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/rsd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/rsd/rsd": {
+        "EncoderTimeout": 30000000000,
+        "EncoderThreshold": 400000000000,
+        "DecoderThreshold": 400000000000,
+        "RepairParallelism": 144,
+        "MapSaveInterval": 30000000000,
+        "RunMigration": false,
+        "RemoveRSWithID": null,
+        "VerifyBids": null,
+        "DumpRsMap": 0,
+        "Repair": null,
+        "PerRSParallelism": 1,
+        "Reserved": 0.07,
+        "RSIOReserved": 0.08,
+        "MaxCorruptedTracked": 0,
+        "GetLimit": 80,
+        "PutLimit": 80,
+        "ListMaxEntries": 128,
+        "ListVerifyTablets": null,
+        "ListVerifyTabStartRS": null,
+        "ListVerifyParallelism": 12
+      },
+      "/slabconfig/base/s3lited/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/s3lited/bsck": {
+        "Enabled": false,
+        "SampleMode": "sampling",
+        "Filters": {
+          "Tablets": null,
+          "Buckets": null,
+          "Regex": "",
+          "Dedup": 100000,
+          "Blobs": null
+        },
+        "Expiration": {
+          "Years": 1,
+          "Months": 0,
+          "Days": 0
+        },
+        "MaxWorkPerHour": 0,
+        "DynamicThrottling": true,
+        "LogVerify": false
+      },
+      "/slabconfig/base/s3lited/s3lited": {
+        "Port": 80,
+        "SslPort": 443,
+        "AuxPorts": [
+          7070
+        ],
+        "AuxSslPorts": [],
+        "DummyField": "AAAAAAAAAAAAAAAAAAAAAA==",
+        "EnableBucketAPI": true,
+        "DisableMultipartUploads": false,
+        "PutRequestLimit": 50,
+        "DelRequestLimit": 2000,
+        "GetRequestLimit": 0,
+        "ListRequestLimit": 0,
+        "GroupRequestLimit": 96,
+        "RemoteGetRequestLimit": 0,
+        "RemotePutRequestLimit": 2000,
+        "SmallObjectThreshold": 16384,
+        "LargeObjectThreshold": 16384,
+        "GroupPutLimit": 5000,
+        "GroupDeleteLimit": 1000,
+        "GroupDeleteKeySizeLimit": 150000,
+        "GroupCacheSize": 134217728,
+        "EnableCORSGet": false,
+        "RetrievalThreads": 40,
+        "RetrievalPageSize": 1000,
+        "RetrievalRemoteLinks": true,
+        "ReadTimeoutMs": 0,
+        "WriteTimeoutMs": 0,
+        "S3AtRestCompression": false,
+        "EnableInternalAPI": false,
+        "EnableRSDLibrary": true,
+        "ObfuscateLevel": 1,
+        "SlowPutLogging": 0,
+        "SlowGetLogging": 0,
+        "BlobWriterClients": 20,
+        "EnableRawPutVerification": false,
+        "ObjectMode": 7,
+        "CertLoadTimeoutSecs": 30
+      },
+      "/slabconfig/base/tischlerd/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/tischlerd/tischlerd": {
+        "MetricsRate": 60000000000,
+        "MaxScanResponseSize": 1048576,
+        "OpenConcurrency": 10,
+        "GCPeriod": 600000000000,
+        "TableExpiration": 3600000000000,
+        "ScanExpiration": 300000000000,
+        "MaxOptimizedLevels": 10,
+        "MaxScanLevels": 10,
+        "MaxCompactionLevels": 20,
+        "AutoCompactionLevels": 40,
+        "LevelLimit": 100,
+        "CompactionAmplification": 20,
+        "CompactionWorkers": 4,
+        "CheckpointThreshold": 4194304,
+        "CheckpointPeriod": 600,
+        "MaxCheckpointSize": 8388608,
+        "MaxLevels": 20,
+        "ConcurrentCompactions": 4,
+        "JobsConcurrency": 10,
+        "JobsBlobCacheSize": 1073741824,
+        "JobsBlobCacheFillLimit": 32,
+        "JobsBlobCacheShards": 4,
+        "S3Endpoint": "",
+        "S3Region": "",
+        "Bucket": "",
+        "AccessKey": "",
+        "SecretKey": "",
+        "PostMigrateCleanup": false
+      },
+      "/slabconfig/base/vyasad/Logging": {
+        "Level": 7,
+        "LevelOverride": {}
+      },
+      "/slabconfig/base/vyasad/vyasad": {}
+    }
