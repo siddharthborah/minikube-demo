@@ -1,4 +1,22 @@
-### Min ukube important commands
+# Usage
+
+1. Build from root folder of the repo
+```
+docker build -t hello-world-image .
+```
+
+2. Docker run
+```
+docker run -p 8080:8080 hello-world-image:latest
+```
+
+3. Test
+
+```
+curl http://localhost:8080/hello
+```
+
+### Miniukube important commands
 ```
 minikube start
 minikube status
@@ -25,4 +43,11 @@ kubectl apply -f hello-world-service.yaml
 docker build -t hello-world-image .
 docker tag my-local-image:latest my-local-repo/my-image:latest
 ```
+### Exec into containers
+```
+docker exec -it b3d284774829 bash
+kubectl exec -it hello-world-deployment-59c8dd6d58-xhwdh -- /bin/sh
+```
+
+
 

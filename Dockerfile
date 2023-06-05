@@ -5,9 +5,10 @@ FROM golang:latest
 WORKDIR /app
 
 # Copy the Go application source code to the container
-COPY . .
+COPY ./go /app/go
 
 # Build the Go application inside the container
+WORKDIR /app/go
 RUN go build -o hello-world-app
 
 # Set the entry point for the container
